@@ -11,12 +11,6 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.grid.transitioning {
-  background-image:
-  linear-gradient(rgba(126, 89, 231, 0.8), rgba(126, 89, 231, 0.8)),
-  url("../public/bg.jpg");
-}
-
 .bubble-overlay {
   position: absolute;
   top: 0;
@@ -180,15 +174,33 @@
   opacity: 1;
   transition: opacity 2s ease-in-out;
   pointer-events: auto;
+  
 }
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   pointer-events: none;
 }
+/* .animate-fade-out {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transition: all 3s ease-in;
+    transition: transform 1.2s ease-in-out ;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transition: all 3s ease-in;
+    transition: transform 1.2s ease-in-out ;
+    transform: scale(0.4);
+  }
+} */
 
-.shrink-to-mobile {
-  animation: shrinkToMobile 1s ease-in-out forwards;
+/* .shrink-to-mobile {
+  animation: shrinkToMobile 3s ease-in-out forwards;
 }
 
 @keyframes shrinkToMobile {
@@ -204,3 +216,5 @@
 
 
 
+
+ */

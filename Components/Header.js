@@ -21,7 +21,6 @@ const Header = () => {
 
   const timer = setTimeout(() => {
     setPhase("after");
-    // }, 1600);
     setTimeout(() => {
       setShowMobileLady(true);
     }, 2000);
@@ -33,7 +32,7 @@ const Header = () => {
   return (
     <>
       <div
-        className={`grid ${isTransitioning ? "transitioning" : ""} ${
+        className={`grid only-bg ${isTransitioning ? "transitioning" : ""} ${
           phase === "after" ? "after-bubble after" : ""
         }`}
       >
@@ -71,29 +70,36 @@ const Header = () => {
           src={homeGirl}
           className={`pinkLady ${phase === "after" ? "fade-out" : "fade-in"}`}
         />
-        {/* <img
-          src={BlueGirl}
-          className={`blueLady ${phase === "after" ? "fade-in" : "fade-out"}`}
-        /> */}
         <img
           src={BlueGirl}
           className={`blueLady ${
             phase === "after" && !showMobileLady ? "fade-in" : ""
-          } ${showMobileLady ? "shrink-to-mobile" : ""}`}
+          } ${showMobileLady ? "fade-in shrink" : "fade-out"}`}
         />
 
-        <div className="flower-orange">
-          <img src={flower} className="flower" alt="flower" />
-          <img
-            src={orangebg}
-            className={`orange-bg ${phase === "after" ? "after" : ""}`}
-            alt="orange bg"
-          />
-        </div>
+        {showMobileLady !== "false" && (
+          <>
+            <div
+              className={`flower-orange ${
+                showMobileLady ? "animate-fade-out" : "fade-in"
+              }`}
+            >
+              <img src={flower} className="flower" alt="flower" />
+              <img
+                src={orangebg}
+                className={`orange-bg ${phase === "after" ? "after" : ""} `}
+                alt="orange bg"
+              />
+            </div>
 
-        <img src={orange} className="orange" alt="orange" />
+            <img src={orange} className="orange" alt="orange" />
+          </>
+        )}
         <div>
-          <MobileMockup />
+          <MobileMockup
+            showMobileLady={showMobileLady}
+            isTransitioning={isTransitioning}
+          />
         </div>
       </div>
     </>
