@@ -1,0 +1,173 @@
+.grid{
+  width: 100%;
+  height: 100vh;
+  background-image:
+  linear-gradient(rgba(126, 89, 231, 0.8), rgba(126, 89, 231, 0.8)),
+  url("../public/bg.jpg");
+
+  position: relative;
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.grid.after-bubble {
+  background-image:
+  linear-gradient(rgba(126, 89, 231, 0), rgba(126, 89, 231, 0)),
+  url("../public/bg.jpg"); 
+  background-blend-mode: normal;  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;           
+}
+/* .pinkLady{
+  position: absolute;
+  bottom: 80%;
+  right: 28%;
+  height: auto;
+  z-index: 2;
+} */
+.flower{
+  position: absolute;
+  bottom: 150px;
+  right: 5%;
+  height: 150px;
+  z-index: 2;
+  transform: rotate(-2.4deg);
+}
+.orange{
+  position: absolute;
+  bottom: 100px;
+  left: 1%;
+  height: 150px;
+  z-index: 2;
+  transform: rotate(-32.4deg);
+
+}
+.orange-bg{
+  position: absolute;
+  bottom: 160px;
+  right: 10%;
+  height: 150px;
+  z-index: 1;
+  transform: rotate(-2.4deg);
+
+  filter: brightness(0) sepia(1) hue-rotate(236deg) saturate(400%) opacity(0.4);
+  mix-blend-mode: multiply;
+  
+}
+
+#home-text{
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 600;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: white;
+  font-size: 2.5rem;
+  z-index: 2;
+  line-height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+@font-face {
+  font-family: 'American Signature';
+  src: url('/fonts/American Signature.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.signature-text {
+  font-family: 'American Signature', cursive;
+  font-weight: 400;
+  transform: rotate(-17.08deg);
+  transform-origin: center;
+  font-size: 3rem;
+  display: inline-block;
+}
+.of-text{
+   align-items: flex-end;
+   display: flex;
+   text-align: end;
+   flex-direction: column
+}
+.heading-transition {
+  color: #7E59E7; /* start with purple */
+  animation: colorFade 2s ease-in-out forwards;
+}
+
+@keyframes colorFade {
+  0% {
+    color: #7E59E7; 
+  }
+  100% {
+    color: white;
+  }
+}
+.bubble-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-image: url("../public/bg.jpg");
+  mix-blend-mode:hue;
+  z-index: 2;
+  animation: bubbleExpand 2s ease-in forwards;
+  transform: translate(50%, -50%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+ 
+}
+
+@keyframes bubbleExpand {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 300vmax;
+    height: 300vmax;
+  }
+}
+
+
+.pinkLady, .blueLady {
+  position: absolute;
+  bottom: 30%;
+  right: 28%;
+  height: auto;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Initial state */
+.pinkLady {
+  opacity: 1;
+  z-index: 2;
+}
+.blueLady {
+  opacity: 0;
+  z-index: 2;
+}
+
+/* After bubble */
+.after .pinkLady {
+  opacity: 0;
+  pointer-events: none;
+}
+.after .blueLady {
+  opacity: 1;
+}
+
+/* Text smooth transition */
+.home-text {
+  transition: all 0.8s ease-in-out;
+  z-index: 2;
+}
+
+
