@@ -4,23 +4,49 @@
   background-image:
   linear-gradient(rgba(126, 89, 231, 0.8), rgba(126, 89, 231, 0.8)),
   url("../public/bg.jpg");
-
   position: relative;
+  overflow: hidden;
   background-blend-mode: multiply;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-
-.grid.after-bubble {
+.grid.transitioning {
   background-image:
-  /* linear-gradient(rgba(126, 89, 231, 0), rgba(126, 89, 231, 0)), */
-  url("../public/bg.jpg"); 
-  background-blend-mode: normal;  
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;           
+  linear-gradient(rgba(126, 89, 231, 0.8), rgba(126, 89, 231, 0.8)),
+  url("../public/bg.jpg");
 }
+
+.bubble-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  z-index: 2;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: url("../public/bg.jpg");
+  filter: none; 
+
+  width: 200vmax;
+  height: 200vmax;
+  transform: scaleX(0) scaleY(0) translate(50%, -50%);
+  transform-origin: top right;
+  animation: bubbleStretch 3s ease-in forwards;
+}
+@keyframes bubbleStretch {
+  0% {
+    transform: scaleX(0) scaleY(0) translate(50%, -50%);
+  }
+  50% {
+    transform: scaleX(0.2) scaleY(0.2) translate(50%, -50%);
+  }
+  100% {
+    transform: scaleX(1) scaleY(1) translate(50%, -50%);
+  }
+}
+
+
 .orange{
   position: absolute;
   bottom: 160px;
@@ -35,7 +61,7 @@
   bottom: 30%;
   right: 0%;
   height: 150px;
-  z-index: 2;
+  z-index: 4;
   transform: rotate(-2.4deg);
 }
 
@@ -48,6 +74,7 @@
   transform: rotate(-2.4deg);
   filter: brightness(0) sepia(1) hue-rotate(236deg) saturate(400%) opacity(0.4);
   mix-blend-mode: multiply;
+  transition-duration: 2s;
   
 }
 .orange-bg.after {
@@ -85,21 +112,24 @@
   font-size: 3rem;
   display: inline-block;
 }
+
 .signature-text-style{
   color: #7E59E7;
   padding-bottom: 10px;
   position: relative;
   right: 5%;
 }
+
 .of-text{
    align-items: flex-end;
    display: flex;
    text-align: end;
    flex-direction: column
 }
+
 .heading-transition {
-  color: #7E59E7; /* start with purple */
-  animation: colorFade 2s ease-in-out forwards;
+  color: #7E59E7; 
+  animation: colorFade 1s ease-in-out forwards;
 }
 
 @keyframes colorFade {
@@ -116,41 +146,6 @@
   display: flex;
   flex-direction: column;
 }
-
-
-.bubble-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  z-index: 2;
-  animation: bubbleExpand 2s ease-in forwards;
-  transform: translate(50%, -50%);
-  
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: hidden;
-  background-image: url("../public/bg.jpg");
-  filter: none; 
-  /* mix-blend-mode: normal;  */
-}
-
-@keyframes bubbleExpand {
-  from {
-    width: 0;
-    height: 0;
-  }
-  to {
-    width: 200vmax;
-    height: 200vmax;
-    /* width: 100%;
-    height: 100%; */
-  }
-}
-
 
 .pinkLady, .blueLady {
   position: absolute;
@@ -186,6 +181,17 @@
 .home-text {
   transition: all 0.8s ease-in-out;
   z-index: 2;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+  pointer-events: auto;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;
 }
 
 
