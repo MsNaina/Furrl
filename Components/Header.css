@@ -31,9 +31,9 @@
 
 .orange{
   position: absolute;
-  bottom: 150px;
-  left: 1%;
-  height: 150px;
+  bottom: 160px;
+  left: 0%;
+  height: 120px;
   z-index: 2;
   transform: rotate(-32.4deg);
 
@@ -41,7 +41,7 @@
 .flower{
   position: absolute;
   bottom: 30%;
-  right: 5%;
+  right: 0%;
   height: 150px;
   z-index: 2;
   transform: rotate(-2.4deg);
@@ -50,7 +50,7 @@
 .orange-bg{
   position: absolute;
   bottom: 30%;
-  right: 10%;
+  right: 8%;
   height: 150px;
   z-index: 1;
   transform: rotate(-2.4deg);
@@ -132,8 +132,10 @@
     height: 0;
   }
   to {
-    width: 300vmax;
-    height: 300vmax;
+    width: 200vmax;
+    height: 200vmax;
+    /* width: 100%;
+    height: 100%; */
   }
 }
 
