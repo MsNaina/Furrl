@@ -59,11 +59,17 @@ const Header = () => {
             phase === "after" ? "fade-in" : "fade-out"
           }`}
         >
-          <h1 className="heading-transition-blue">
-            <span className="signature-text-style">Stylish</span> Homegrown{" "}
-            <br />
-            <span className="of-text">brands</span>
-          </h1>
+          {showMobileLady !== "false" && (
+            <h1
+              className={`heading-transition-blue  ${
+                showMobileLady ? "fade-out" : "fade-in"
+              }`}
+            >
+              <span className="signature-text-style">Stylish</span> Homegrown{" "}
+              <br />
+              <span className="of-text">brands</span>
+            </h1>
+          )}
         </div>
 
         <img
@@ -81,24 +87,30 @@ const Header = () => {
           <>
             <div
               className={`flower-orange ${
-                showMobileLady ? "animate-fade-out" : "fade-in"
+                showMobileLady ? "fade-out" : "fade-in"
               }`}
             >
               <img src={flower} className="flower" alt="flower" />
               <img
                 src={orangebg}
-                className={`orange-bg ${phase === "after" ? "after" : ""} `}
+                className={`orange-bg ${phase === "after" ? "after" : ""} 
+                 `}
                 alt="orange bg"
               />
             </div>
 
-            <img src={orange} className="orange" alt="orange" />
+            <img
+              src={orange}
+              className={`orange ${showMobileLady ? "fade-out" : "fade-in"}`}
+              alt="orange"
+            />
           </>
         )}
         <div>
           <MobileMockup
             showMobileLady={showMobileLady}
             isTransitioning={isTransitioning}
+            phase={phase}
           />
         </div>
       </div>
