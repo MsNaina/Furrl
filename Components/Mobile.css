@@ -5,7 +5,7 @@
   /* width: fit-content; */
   left: 50%;
   transform: translateX(-50%);
-  height: 30%;
+  height: 28%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -88,3 +88,14 @@
     display: flex;
     gap: 5px;
 }
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+

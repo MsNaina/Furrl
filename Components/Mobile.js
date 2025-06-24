@@ -17,7 +17,8 @@ const MobileMockup = () => {
 
   return (
 
-<div className={`outer-wrapper ${animate ? 'expand' : ''}`}>
+    <div className={`outer-wrapper ${animate ? 'expand' : ''} 
+      ${showMobileLady ? 'fade-in' : 'fade-out'}`}>
 
     <div className="mockup-container">
       <img src="/phone.png" alt="Mobile Frame" className="phone-frame" />

@@ -26,8 +26,6 @@
   overflow: hidden;
   background-color: transparent;
   background-image: url("../public/bg.jpg");
-  filter: none; 
-
   width: 200vmax;
   height: 200vmax;
   transform: scaleX(0) scaleY(0) translate(50%, -50%);
@@ -45,8 +43,6 @@
     transform: scaleX(1) scaleY(1) translate(50%, -50%);
   }
 }
-
-
 .orange{
   position: absolute;
   bottom: 160px;
@@ -54,7 +50,6 @@
   height: 120px;
   z-index: 2;
   transform: rotate(-32.4deg);
-
 }
 .flower{
   position: absolute;
@@ -152,7 +147,6 @@
   bottom: 30%;
   right: 28%;
   height: auto;
-  /* transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
 }
 
 /* Initial state */
@@ -187,11 +181,26 @@
   transition: opacity 2s ease-in-out;
   pointer-events: auto;
 }
-
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   pointer-events: none;
 }
+
+.shrink-to-mobile {
+  animation: shrinkToMobile 1s ease-in-out forwards;
+}
+
+@keyframes shrinkToMobile {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.2) translate(150%, 250%);
+    opacity: 0;
+  }
+}
+
 
 
