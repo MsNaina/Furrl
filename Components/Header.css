@@ -14,21 +14,13 @@
 
 .grid.after-bubble {
   background-image:
-  linear-gradient(rgba(126, 89, 231, 0), rgba(126, 89, 231, 0)),
+  /* linear-gradient(rgba(126, 89, 231, 0), rgba(126, 89, 231, 0)), */
   url("../public/bg.jpg"); 
   background-blend-mode: normal;  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;           
 }
-/* .pinkLady{
-  position: absolute;
-  bottom: 80%;
-  right: 28%;
-  height: auto;
-  z-index: 2;
-} */
-
 .orange{
   position: absolute;
   bottom: 160px;
@@ -58,8 +50,13 @@
   mix-blend-mode: multiply;
   
 }
+.orange-bg.after {
+  filter: none; 
+  mix-blend-mode: normal;
+  z-index: 3;
+}
 
-#home-text{
+#home-text ,.home-text-blue{
   font-family: var(--font-montserrat), sans-serif;
   font-weight: 600;
   position: absolute;
@@ -80,13 +77,19 @@
   font-style: normal;
 }
 
-.signature-text {
+.signature-text ,.signature-text-style{
   font-family: 'American Signature', cursive;
   font-weight: 400;
   transform: rotate(-17.08deg);
   transform-origin: center;
   font-size: 3rem;
   display: inline-block;
+}
+.signature-text-style{
+  color: #7E59E7;
+  padding-bottom: 10px;
+  position: relative;
+  right: 5%;
 }
 .of-text{
    align-items: flex-end;
@@ -107,6 +110,14 @@
     color: white;
   }
 }
+
+.heading-transition-blue{
+  color: #475467;
+  display: flex;
+  flex-direction: column;
+}
+
+
 .bubble-overlay {
   position: absolute;
   top: 0;
@@ -114,16 +125,17 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background-image: url("../public/bg.jpg");
-  mix-blend-mode:hue;
   z-index: 2;
   animation: bubbleExpand 2s ease-in forwards;
   transform: translate(50%, -50%);
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
- 
+  background-image: url("../public/bg.jpg");
+  filter: none; 
+  /* mix-blend-mode: normal;  */
 }
 
 @keyframes bubbleExpand {
@@ -145,7 +157,7 @@
   bottom: 30%;
   right: 28%;
   height: auto;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  /* transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
 }
 
 /* Initial state */
@@ -155,7 +167,7 @@
 }
 .blueLady {
   opacity: 0;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* After bubble */
@@ -165,6 +177,9 @@
 }
 .after .blueLady {
   opacity: 1;
+  bottom: 22%;
+  right: 25%;
+  height: 72%;
 }
 
 /* Text smooth transition */
