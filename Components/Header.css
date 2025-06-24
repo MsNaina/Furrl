@@ -28,14 +28,7 @@
   height: auto;
   z-index: 2;
 } */
-.flower{
-  position: absolute;
-  bottom: 150px;
-  right: 5%;
-  height: 150px;
-  z-index: 2;
-  transform: rotate(-2.4deg);
-}
+
 .orange{
   position: absolute;
   bottom: 150px;
@@ -45,14 +38,22 @@
   transform: rotate(-32.4deg);
 
 }
+.flower{
+  position: absolute;
+  bottom: 30%;
+  right: 5%;
+  height: 150px;
+  z-index: 2;
+  transform: rotate(-2.4deg);
+}
+
 .orange-bg{
   position: absolute;
-  bottom: 160px;
+  bottom: 30%;
   right: 10%;
   height: 150px;
   z-index: 1;
   transform: rotate(-2.4deg);
-
   filter: brightness(0) sepia(1) hue-rotate(236deg) saturate(400%) opacity(0.4);
   mix-blend-mode: multiply;
   
