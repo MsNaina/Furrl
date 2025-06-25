@@ -107,9 +107,7 @@ const Header = () => {
           </>
         )}
         <div>
-          <MobileMockup
-            showMobileLady={showMobileLady}
-            isTransitioning={isTransitioning}
+          <MobileMockup showMobileLady={showMobileLady} isTransitioning={isTransitioning}
             phase={phase}
           />
         </div>

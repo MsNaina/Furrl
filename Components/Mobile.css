@@ -27,10 +27,6 @@
   opacity: 1;
   pointer-events: auto;
 }
-.outer-wrapper-initial.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
 .outer-wrapper-expanded {
   bottom: 0;
   height: 28%;

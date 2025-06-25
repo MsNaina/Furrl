@@ -143,7 +143,6 @@
   height: auto;
 }
 
-/* Initial state */
 .pinkLady {
   opacity: 1;
   z-index: 2;
@@ -152,8 +151,6 @@
   opacity: 0;
   z-index: 5;
 }
-
-/* After bubble */
 .after .pinkLady {
   opacity: 0;
   pointer-events: none;
@@ -164,8 +161,6 @@
   right: 25%;
   height: 72%;
 }
-
-/* Text smooth transition */
 .home-text {
   transition: all 0.8s ease-in-out;
   z-index: 2;
@@ -198,19 +193,3 @@
     transform: scale(0.4);
   }
 }
-
-/* .shrink-to-mobile {
-  animation: shrinkToMobile 3s ease-in-out forwards;
-}
-
-@keyframes shrinkToMobile {
-  0% {
-    transform: scale(1) translate(0, 0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.2) translate(150%, 250%);
-    opacity: 0;
-  }
-}
- */
